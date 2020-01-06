@@ -1,5 +1,5 @@
 public class Main{
 	public static void main(String[] args){
-	new Permutate().permutate(args[0] , "");
+	new Permutate(Integer.parseInt(args[1])).permutate(args[0] , "");
 	}
 }

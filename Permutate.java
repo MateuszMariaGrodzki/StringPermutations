@@ -1,9 +1,17 @@
+import java.util.*;
 public class Permutate{
+	private Set<String> permutations;
+	private int length;
 	
+	public Permutate(int length){
+		this.length = length;
+		permutations = new HashSet<>();
+	}
+
 	public void permutate(String given , String toPrint){
 
 		if(given.length() == 0){
-			System.out.println(toPrint);
+			permutations.add(toPrint.substring(0,length));
 		}
 		
 		for(int i = 0 ; i < given.length() ; ++i){
@@ -14,4 +22,5 @@ public class Permutate{
 		permutate(rest , toPrint + currentChar);
 		}
 	}
+
 }
