@@ -22,5 +22,8 @@ public class Permutate{
 		permutate(rest , toPrint + currentChar);
 		}
 	}
-
+	
+	public void printSet(){
+		permutations.forEach(System.out::println);
+	}
 }
