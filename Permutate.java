@@ -24,6 +24,16 @@ public class Permutate{
 	}
 	
 	public void printSet(){
-		permutations.forEach(System.out::println);
+
+		Iterator value = permutations.iterator();
+
+		while(value.hasNext()){
+			
+			for(int i = 1 ; i < length ; ++i){
+			System.out.print("|" + value.next());
+			}
+			System.out.print("|" + value.next()+ "|");
+			System.out.println("");
+		}
 	}
 }
