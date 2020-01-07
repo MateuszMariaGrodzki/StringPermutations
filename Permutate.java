@@ -24,16 +24,18 @@ public class Permutate{
 	}
 	
 	public void printSet(){
-
+		int lineNumber = 1;
 		Iterator value = permutations.iterator();
 
 		while(value.hasNext()){
-			
+			System.out.print(lineNumber + ")");
 			for(int i = 1 ; i < length ; ++i){
+			
 			System.out.print("|" + value.next());
 			}
 			System.out.print("|" + value.next()+ "|");
 			System.out.println("");
+			lineNumber += 1;
 		}
 	}
 }
