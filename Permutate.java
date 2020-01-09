@@ -38,4 +38,25 @@ public class Permutate{
 			lineNumber += 1;
 		}
 	}
+
+	public String generateRegex(String str){
+		String result = "";
+		int dotCounter = 0;
+		
+		for(int i = 0 ; i < str.length() ; ++i){
+			if(str.charAt(i) == '.'){
+				dotCounter++;
+			} else {
+				if(dotCounter == 1){
+					result += "[a-z]";
+				} else {
+					result += "[a-z]{"+dotCounter+"}["+ str.charAt(i) +"]";
+					dotCounter = 0;
+			}
+				}
+		}
+		return result;
+		
+	}
+
 }
