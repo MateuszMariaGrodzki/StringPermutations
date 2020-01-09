@@ -46,14 +46,20 @@ public class Permutate{
 		for(int i = 0 ; i < str.length() ; ++i){
 			if(str.charAt(i) == '.'){
 				dotCounter++;
+				if(i == str.length() - 1 && dotCounter == 1){
+					result += "[a - z]";
+				} else {
+					result += "[a - z]{" + dotCounter + "}";
+				}
 			} else {
 				if(dotCounter == 1){
-					result += "[a-z]";
-				} else {
-					result += "[a-z]{"+dotCounter+"}["+ str.charAt(i) +"]";
+					result += "[a-z][" + str.charAt(i) + "]";
+				} else if(dotCounter == 0) {
+					result += "[" + str.charAt(i) + "]";		
+				} else {result += "[a-z]{"+dotCounter+"}["+ str.charAt(i) +"]";
 					dotCounter = 0;
-			}
 				}
+			}
 		}
 		return result;
 		
