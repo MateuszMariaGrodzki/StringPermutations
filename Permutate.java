@@ -1,16 +1,20 @@
 import java.util.*;
+import java.util.regex.Pattern;
+
 public class Permutate{
 	private Set<String> permutations;
 	private int length;
+	private Pattern pattern;
 	
-	public Permutate(int length){
+	public Permutate(int length, String pattern){
 		this.length = length;
 		permutations = new HashSet<>();
+		this.pattern = Pattern.compile(generateRegex(pattern));
 	}
 
 	public void permutate(String given , String toPrint){
 
-		if(given.length() == 0){
+		if(given.length() == 0 && pattern.matcher(toPrint.substring(0,length)).matches()){
 			permutations.add(toPrint.substring(0,length));
 		}
 		
@@ -56,6 +60,7 @@ public class Permutate{
 			} else {
 				if(dotCounter == 1){
 					result += "[a-z][" + str.charAt(i) + "]";
+					dotCounter = 0;
 				} else if(dotCounter == 0) {
 					result += "[" + str.charAt(i) + "]";		
 				} else {result += "[a-z]{"+dotCounter+"}["+ str.charAt(i) +"]";

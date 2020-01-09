@@ -10,7 +10,7 @@ public class Main{
 			System.out.println("Drugi argument programu nie jest liczbą");
 		}
 		
-		Permutate permutate = new Permutate(lengthOfPermutations);
+		Permutate permutate = new Permutate(lengthOfPermutations, args[2]);
 		try {
 		permutate.permutate(args[0] , "");
 		} catch(StringIndexOutOfBoundsException e) {
