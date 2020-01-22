@@ -12,6 +12,8 @@ public class Permutate{
 		this.pattern = Pattern.compile(generateRegex(pattern));
 	}
 
+	public Permutate(){}
+
 	public void permutate(String given , String toPrint){
 
 		if(given.length() == 0 && pattern.matcher(toPrint.substring(0,length)).matches()){
