@@ -44,7 +44,7 @@ public class Permutate{
 			lineNumber += 1;
 		}
 	}
-
+	//TODO - refactor this method
 	public String generateRegex(String str){
 		String result = "";
 		int dotCounter = 0;
