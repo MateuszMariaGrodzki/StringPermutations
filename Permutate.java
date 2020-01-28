@@ -53,11 +53,7 @@ public class Permutate{
 			if(isCharADot(str.charAt(i))){
 				dotCounter++;
 				if(i == str.length() - 1) {
-					if(dotCounter == 1){
-						result += "[a-z]";
-					} else {
-						result += "[a-z]{" + dotCounter +"}";
-					}
+					result += actionWhenLastCharIsDot(dotCounter);
 				}
 			} else {
 				if(dotCounter == 1){
@@ -76,6 +72,16 @@ public class Permutate{
 
 	public boolean isCharADot(char c){
 		return c == '.';
+	}
+
+	public String actionWhenLastCharIsDot(int dotCounter){
+		String result = "";
+		if(dotCounter == 1){
+			result += "[a-z]";
+		} else {
+			result += "[a-z]{" + dotCounter + "}";
+		}
+		return result;
 	}
 
 }
