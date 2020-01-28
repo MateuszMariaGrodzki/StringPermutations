@@ -44,13 +44,13 @@ public class Permutate{
 			lineNumber += 1;
 		}
 	}
-	//TODO - refactor this method
+	
 	public String generateRegex(String str){
 		String result = "";
 		int dotCounter = 0;
 		
 		for(int i = 0 ; i < str.length() ; ++i){
-			if(str.charAt(i) == '.'){
+			if(isCharADot(str.charAt(i))){
 				dotCounter++;
 				if(i == str.length() - 1) {
 					if(dotCounter == 1){
@@ -72,6 +72,10 @@ public class Permutate{
 		}
 		return result;
 		
+	}
+
+	public boolean isCharADot(char c){
+		return c == '.';
 	}
 
 }
