@@ -56,14 +56,8 @@ public class Permutate{
 					result += actionWhenLastCharIsDot(dotCounter);
 				}
 			} else {
-				if(dotCounter == 1){
-					result += "[a-z][" + str.charAt(i) + "]";
-					dotCounter = 0;
-				} else if(dotCounter == 0) {
-					result += "[" + str.charAt(i) + "]";		
-				} else {result += "[a-z]{"+dotCounter+"}["+ str.charAt(i) +"]";
-					dotCounter = 0;
-				}
+				result += actionWhenCharIsNotDot(dotCounter,str.charAt(i));
+				dotCounter = 0;
 			}
 		}
 		return result;
@@ -84,4 +78,15 @@ public class Permutate{
 		return result;
 	}
 
+	public String actionWhenCharIsNotDot(int dotCounter, char currentChar){
+		String result = "";
+		if(dotCounter == 0) {
+			result += "[" + currentChar + "]";
+		} else if(dotCounter == 1) {
+			result += "[a-z][" + currentChar + "]";
+		} else {
+			result += "[a-z]{" + dotCounter + "}[" + currentChar + "]";
+		}
+		return result;
+	}
 }
