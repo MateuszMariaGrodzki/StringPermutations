@@ -5,7 +5,7 @@
 ### Above arguments are passing by command line as follows: java Main "String" "Number" "Pattern"
 > * String - letters from which permutations will be created
 > * Number - define length of expected permutation
-> * Pattern - allows to narrow printing permutations to user's choice ( dot sign represents eny letter)
+> * Pattern - allows to narrow printing permutations to user's choice ( dot sign represents any letter)
 ### Examples:
 > * java Main abcde 3 .b. will print all permutations of length 3 with b as second letter
 > * java Main abc 2 .. will print all permutations of length 2
